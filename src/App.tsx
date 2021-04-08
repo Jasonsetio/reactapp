@@ -41,7 +41,7 @@ const handleResume = () => {
     const renderingBTn = () => {
       if (!isActive && timer === 0 ) {
         return (
-          <button onClock={handleStart}>Start</button>
+          <button onClick={handleStart}>Start</button>
         )
       }else if (!isActive && timer > 0) {
         return (
