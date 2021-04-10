@@ -1,12 +1,11 @@
 import React , { useState, useRef } from 'react';
-import './App.css';
-import { createIncrementalCompilerHost, setSyntheticLeadingComments } from 'typescript';
+import 'App.css';
 
 const App = () => {
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const increment: any = useRef(null);
-}
+
 
 const handleStart = () => {
   setIsActive(true)
@@ -25,12 +24,12 @@ const handleResume = () => {
   increment.current = setInterval(() => {
     setTimer((timer) => timer + 1)
   }, 10)
-
+}
   const handleReset = () => {
     clearInterval(increment.current);
     setIsActive(false);
     setTimer(0);
-
+  }
     const formatTime = () => {
       const centiSeconds ='0${timer % 100}'.slice(-2)
       const seconds = '0${Math.floor(timer / 100) % 60}' .slice(-2)
@@ -38,7 +37,7 @@ const handleResume = () => {
 
       return '${minutes} : ${seconds} :${centiSeconds}'
     }
-    const renderingBTn = () => {
+    const renderingBtn = () => {
       if (!isActive && timer === 0 ) {
         return (
           <button onClick={handleStart}>Start</button>
@@ -70,5 +69,5 @@ const handleResume = () => {
       </div>
     )
   }
-}
+
 export default App;
