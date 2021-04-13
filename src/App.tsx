@@ -1,5 +1,5 @@
 import React , { useState, useRef } from 'react';
-import 'App.css';
+import './App.css';
 
 const App = () => {
   const [timer, setTimer] = useState(0);
@@ -35,7 +35,7 @@ const handleResume = () => {
       const seconds = '0${Math.floor(timer / 100) % 60}' .slice(-2)
       const minutes = '0${Math.floor(timer / 6000) % 60}' .slice(-2)
 
-      return '${minutes} : ${seconds} :${centiSeconds}'
+      return '${minutes} : ${seconds} : ${centiSeconds}'
     }
     const renderingBtn = () => {
       if (!isActive && timer === 0 ) {
